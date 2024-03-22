@@ -1,12 +1,17 @@
 import java.util.Scanner;
+import interfaces.IOperaciones;
 
-public class Opciones {
+public class Opciones implements IOperaciones{
     private Scanner scanner;
 
     public Opciones(Scanner scanner) {
         this.scanner = scanner;
     }
 
+    /*
+     * Método que muestra las opciones del programa
+     * para el usuario
+     */
     public void mostrarOpciones() {
         System.out.println("\n------- Programa para detectar numeros -------\n");
         System.out.println("1. Perfecto");
@@ -15,6 +20,9 @@ public class Opciones {
         System.out.println("4. Salir\n");
     }
 
+    /*
+     * Método que obtiene la opción seleccionada por el usuario
+     */
     public int obtenerOpcion() {
         System.out.print("\nSeleccione una de las opciones: ");
 
@@ -25,6 +33,9 @@ public class Opciones {
         return scanner.nextInt();
     }
 
+    /*
+     * Método que obtiene el número ingresado por el usuario
+     */
     public int obtenerNumero() {
         System.out.print("\nIngrese un número: ");
         while (!scanner.hasNextInt()) {
@@ -34,6 +45,9 @@ public class Opciones {
         return scanner.nextInt();
     }
 
+    /*
+     * Método que procesa la opción seleccionada por el usuario
+     */
     public void procesarOpcion(int opcion, int numero) {
         switch (opcion) {
             case 1:
